@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Sairish Maritime Solutions</title>
+  <meta property="og:image" content="../media.bear.plus/sairishcrew/og_new.jpg">
+  <meta property="og:site_name" content="Sairish Maritime Solutions">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.05eea758.png">
+  <meta name="description" content="Discover Sairish Maritime Solutions - premier Singapore-based maritime crewing, manpower management, and seafarer placement partner for global shipowners.">
+  <link rel="stylesheet" href="index.78ddb5e8.css">
+  <script src="index.d13a8d90.js"></script>
+  <style>
+    /* Custom Styling for Restructured About Us Page */
+    .about-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: #ff471d;
+      background: rgba(255, 71, 29, 0.12);
+      border-left: 3px solid #ff471d;
+      padding: 0.6rem 1.6rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+    }
+
+    .about-stats-bar {
+      background: #141618;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 3.6rem 0;
+    }
+
+    .about-stat-item {
+      border-left: 2px solid #ff471d;
+      padding-left: 2rem;
+    }
+
+    .about-stat-val {
+      font-size: clamp(3rem, 3.5vw, 4.4rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1;
+      font-family: 'HelveticaNowDisplayBold', sans-serif;
+    }
+
+    .about-stat-lbl {
+      font-size: 1.4rem;
+      color: rgba(255, 255, 255, 0.65);
+      margin-top: 0.6rem;
+      display: block;
+    }
+
+    /* Purpose & Philosophy Grid */
+    .purpose-card {
+      background: #ffffff;
+      border: 1px solid #e2e6e9;
+      padding: 3.2rem;
+      border-radius: 4px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .purpose-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
+      border-color: #ff471d;
+    }
+
+    .purpose-num {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #ff471d;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+
+    /* Interactive Team Showcase */
+    .team-showcase-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    @media (max-width: 991px) {
+      .team-showcase-wrap {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .team-mem-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .team-mem {
+      background: #ffffff;
+      border: 1px solid #e8ecef;
+      padding: 2rem 2.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      border-left: 4px solid transparent;
+    }
+
+    .team-mem:hover,
+    .team-mem.active {
+      border-left-color: #ff471d;
+      background: #fafbfc;
+      transform: translateX(6px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    }
+
+    .team-mem-info-title {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .team-mem-info-role {
+      font-size: 1.4rem;
+      color: #666;
+      margin-top: 0.3rem;
+    }
+
+    .team-mem-badge {
+      background: rgba(255, 71, 29, 0.08);
+      color: #ff471d;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 0.4rem 1rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .team-preview-stage {
+      position: sticky;
+      top: 10rem;
+      background: #0f1012;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+      min-height: 52rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    .abt-team__main-img-item {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      background-size: cover;
+      background-position: center top;
+    }
+
+    .abt-team__main-img-item.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+
+    .team-preview-overlay {
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(0deg, rgba(12, 13, 14, 0.96) 0%, rgba(12, 13, 14, 0.6) 60%, transparent 100%);
+      padding: 3rem;
+      margin-top: auto;
+    }
+
+    .team-preview-name {
+      color: #ffffff;
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .team-preview-role {
+      color: #ff471d;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 0.4rem;
+    }
+
+    .team-preview-bio {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1.4rem;
+      line-height: 1.5;
+      margin-top: 1rem;
+    }
+
+    /* 3D Value Cards */
+    .value-card-3d {
+      background: #ffffff;
+      border: 1px solid #e5e9ec;
+      padding: 3.6rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+    }
+
+    .value-card-3d::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: transparent;
+      transition: background 0.3s ease;
+    }
+
+    .value-card-3d:hover {
+      border-color: #ff471d;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .value-card-3d:hover::before {
+      background: #ff471d;
+    }
+
+    .value-card-icon {
+      width: 5.6rem;
+      height: 5.6rem;
+      border-radius: 50%;
+      background: rgba(255, 71, 29, 0.08);
+      color: #ff471d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2.4rem;
+    }
+
+    /* Global Network Hubs */
+    .hub-card {
+      background: #141618;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 3rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .hub-card:hover {
+      border-color: #ff471d;
+      background: #191c1e;
+      transform: translateY(-4px);
+    }
+
+    .hub-badge {
+      display: inline-block;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #ff471d;
+      margin-bottom: 1rem;
+    }
+
+    .hub-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+    }
+
+    .hub-desc {
+      font-size: 1.4rem;
+      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.5;
+    }
+
+    /* Milestones Modern Timeline */
+    .milestone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+      gap: 2.4rem;
+      position: relative;
+    }
+
+    .milestone-card {
+      background: #ffffff;
+      border: 1px solid #e5e9ec;
+      padding: 3.2rem 2.8rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+
+    .milestone-card:hover {
+      border-color: #ff471d;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      transform: translateY(-4px);
+    }
+
+    .milestone-year {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: #111;
+      font-family: 'HelveticaNowDisplayBold', sans-serif;
+      line-height: 1;
+    }
+
+    .milestone-tag {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ff471d;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.6rem;
+      margin-bottom: 1.6rem;
+      display: block;
+    }
+
+    .milestone-desc {
+      font-size: 1.5rem;
+      color: #555;
+      line-height: 1.55;
+    }
+
+    /* Accreditation Badges */
+    .accred-badge {
+      background: #ffffff;
+      border: 1px solid #e5e9ec;
+      padding: 2.4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .accred-badge:hover {
+      border-color: #ff471d;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+      transform: translateY(-3px);
+    }
+
+    .accred-icon {
+      color: #ff471d;
+      margin-bottom: 1.2rem;
+    }
+
+    .accred-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.3;
+    }
+
+    .accred-sub {
+      font-size: 1.2rem;
+      color: #777;
+      margin-top: 0.4rem;
+    }
+
+    /* Dual CTA Section */
+    .cta-card {
+      padding: 4.8rem 4rem;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-card-dark {
+      background: #0f1012;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .cta-card-light {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper" data-barba="wrapper">
+
+    <!-- Contact Modal (Request Crew) -->
+    <div class="contact popup">
+      <div class="popup__overlay"></div>
+      <div class="popup__main" data-lenis-prevent>
+        <form action="#" class="popup__main-form">
+          <div class="popup__main-head">
+            <h3 class="h4 heading heading-f-lh popup__main-head-title">Request Crew with Us</h3>
+            <div class="popup__main-head-txt txt txt-18">
+              Our crewing specialists are available 24/7. Reach out to us for vessel manning, officer recruitment, rotation planning, and full STCW/MLC compliance proposals.
+            </div>
+          </div>
+          <div class="popup__main-contact">
+            <div class="popup__main-contact-label txt txt-18">Direct crewing desk:</div>
+            <a href="mailto:info@sairishcrew.com" class="hover-un popup__main-contact-link txt txt-24">info@sairishcrew.com</a>
+          </div>
+          <div class="popup__main-form-inner">
+            <div class="input-wrap">
+              <input type="text" class="input-field txt txt-18" name="name" placeholder="Your Name / Company Name" required>
+              <div class="input-field-line"></div>
+            </div>
+            <div class="input-wrap">
+              <input type="email" class="input-field txt txt-18" name="email" placeholder="Your Business Email" required>
+              <div class="input-field-line"></div>
+            </div>
+            <div class="input-wrap textarea-wrap">
+              <textarea name="message" cols="30" rows="3" class="input-field txt txt-18" placeholder="Vessel Types, Required Ranks, Trading Area & Schedule"></textarea>
+              <div class="input-field-line"></div>
+            </div>
+            <input type="text" class="honey-input" name="blablabla">
+          </div>
+          <div class="hidden popup__main-form-success">
+            <p class="popup__main-form-success-txt txt txt-24 txt-med">
+              Thank you, <br><br>
+              Your crewing inquiry has been routed directly to our operations team. We will review your fleet requirements and revert within 2 hours.
+              <br><br>
+              Best regards,<br>
+              <strong>Sairish Maritime Operations Desk</strong>
+            </p>
+          </div>
+          <button type="submit" class="arr-hover popup__main-submit">
+            <div class="popup__main-submit-inner popup__main-submit-inner-default">
+              <div class="h6 heading heading-bold popup__main-submit-inner-txt">Send Manning Request</div>
+              <div class="arr-wrap arr-wrap-32">
+                <div class="arr-ic-main icon icon-32">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M30.4401 3.68089L3.00001 31.121L0.878693 28.9997L28.3188 1.55957L30.4401 3.68089Z" fill="currentColor"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 1.5H30.5V27.5H27.5V4.5H4.5V1.5Z" fill="currentColor"></path>
+                  </svg>
+                </div>
+                <div class="arr-ic-clone icon icon-32">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M30.4401 3.68089L3.00001 31.121L0.878693 28.9997L28.3188 1.55957L30.4401 3.68089Z" fill="currentColor"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 1.5H30.5V27.5H27.5V4.5H4.5V1.5Z" fill="currentColor"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <a href="#" class="popup__main-submit-inner popup__main-submit-inner-success" data-popup="close">
+              <div class="h6 heading heading-bold popup__main-submit-inner-txt">Close</div>
+            </a>
+            <div class="popup__main-submit-aspect"></div>
+          </button>
+        </form>
+        <a href="#" class="popup__close" data-popup="close">
+          <div class="icon icon-32">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25.1924 6.80664L6.80762 25.1914M6.80762 6.80664L25.1924 25.1914" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Download Proposal Modal -->
+    <div class="download popup">
+      <div class="popup__overlay"></div>
+      <div class="popup__main" data-lenis-prevent>
+        <form action="#" class="popup__main-form">
+          <div class="popup__main-head">
+            <h3 class="h4 heading heading-f-lh popup__main-head-title">Download Corporate Manning Brochure</h3>
+            <div class="popup__main-head-txt txt txt-18">
+              Receive our complete corporate profile, STCW vetting matrix, rate schedules, and MLC 2006 compliance overview.
+            </div>
+          </div>
+          <div class="popup__main-form-inner">
+            <div class="input-wrap">
+              <input type="text" class="input-field txt txt-18" name="name" placeholder="Full Name & Company" required>
+              <div class="input-field-line"></div>
+            </div>
+            <div class="input-wrap">
+              <input type="email" class="input-field txt txt-18" name="email" placeholder="Corporate Email" required>
+              <div class="input-field-line"></div>
+            </div>
+            <div class="input-wrap textarea-wrap">
+              <textarea name="message" cols="30" rows="3" class="input-field txt txt-18" placeholder="Specific Fleet Details (Tanker, Bulk, Container, Offshore)"></textarea>
+              <div class="input-field-line"></div>
+            </div>
+            <input type="text" class="honey-input" name="blablabla">
+          </div>
+          <div class="hidden popup__main-form-success">
+            <p class="popup__main-form-success-txt txt txt-24 txt-med">
+              Brochure sent! Please check your inbox for the download link.
+            </p>
+          </div>
+          <button type="submit" class="arr-hover popup__main-submit">
+            <div class="popup__main-submit-inner popup__main-submit-inner-default">
+              <div class="h6 heading heading-bold popup__main-submit-inner-txt">Download PDF</div>
+              <div class="arr-wrap arr-wrap-32">
+                <div class="arr-ic-main icon icon-32">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M30.4401 3.68089L3.00001 31.121L0.878693 28.9997L28.3188 1.55957L30.4401 3.68089Z" fill="currentColor"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 1.5H30.5V27.5H27.5V4.5H4.5V1.5Z" fill="currentColor"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </button>
+        </form>
+        <a href="#" class="popup__close" data-popup="close">
+          <div class="icon icon-32">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25.1924 6.80664L6.80762 25.1914M6.80762 6.80664L25.1924 25.1914" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Event Modal -->
+    <div class="event popup">
+      <div class="popup__overlay"></div>
+      <div class="popup__main" data-lenis-prevent>
+        <a href="#" class="popup__close" data-popup="close">
+          <div class="icon icon-32">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M25.1924 6.80664L6.80762 25.1914M6.80762 6.80664L25.1924 25.1914" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+        </a>
+        <div class="popup__main-event">
+          <div class="popup__main-event-info">
+            <div class="img-wrap popup__main-event-info-img" style="--aspect:56%" data-popup-event="thumbnail">
+              <img src="abt-info-1.c54342e9.jpg" alt="Sairish Maritime Team" class="img-abs img-fill" width="488" height="442">
+            </div>
+            <div class="h3 heading popup__main-event-title" data-popup-event="name">Event Name</div>
+            <div class="popup__main-event-info-item" data-popup-event="date">
+              <div class="popup__main-event-info-label txt txt-14">Event Date:</div>
+              <div class="popup__main-event-info-title txt txt-16 txt-med"></div>
+            </div>
+            <div class="popup__main-event-info-item" data-popup-event="full_location">
+              <div class="popup__main-event-info-label txt txt-14">Location:</div>
+              <div class="popup__main-event-info-title txt txt-16 txt-med"></div>
+            </div>
+            <div class="popup__main-event-info-item">
+              <div class="popup__main-event-info-label txt txt-14">Schedule a Meeting:</div>
+              <a href="mailto:info@sairishcrew.com" class="popup__main-event-info-title txt txt-16 txt-med">info@sairishcrew.com</a>
+            </div>
+          </div>
+          <div class="popup__main-event-content">
+            <div class="h5 heading popup__main-event-title" data-popup-event="name">Event Name</div>
+            <span class="p-line"></span>
+            <div class="popup__main-event-richtext txt txt-16" data-popup-event="content">
+              Meet the Sairish Maritime leadership delegation at the conference to discuss crewing contracts and fleet manning.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="header">
+      <div class="container">
+        <a href="index.html" class="header__logo" title="Sairish Maritime Solutions">
+          <div class="header__logo-shape" style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+              <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.25"/>
+              <path d="M16 2.5L18.5 11H13.5L16 2.5Z" fill="#ff471d"/>
+              <path d="M16 29.5L13.5 21H18.5L16 29.5Z" fill="currentColor"/>
+              <path d="M2.5 16L11 13.5V18.5L2.5 16Z" fill="currentColor" fill-opacity="0.4"/>
+              <path d="M29.5 16L21 18.5V13.5L29.5 16Z" fill="currentColor" fill-opacity="0.4"/>
+              <path d="M10.5 13.5C10.5 10.5 13 8.5 16 8.5C19 8.5 21.5 10.5 21.5 13.5C21.5 17.5 10.5 16.5 10.5 20.5C10.5 23.5 13 25.5 16 25.5C19 25.5 21.5 23.5 21.5 20.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <circle cx="16" cy="16" r="2.2" fill="#ff471d"/>
+            </svg>
+          </div>
+          <div class="header__typo-1" style="display: flex; align-items: center; gap: 1px; margin-left: 8px;">
+            <span style="font-family: 'HelveticaNowDisplay', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 800; font-size: 19px; letter-spacing: 0.08em; text-transform: uppercase; color: currentColor; line-height: 1;">SAIRISH</span>
+          </div>
+          <div class="header__typo-2" style="display: flex; align-items: center; margin-left: 6px;">
+            <span style="font-family: 'HelveticaNowDisplay', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-weight: 400; font-size: 19px; letter-spacing: 0.12em; text-transform: uppercase; color: #ff471d; line-height: 1;">CREW</span>
+          </div>
+        </a>
+
+        <div class="header__links">
+          <div class="header__links-inner">
+            <a href="index.html" class="header__link txt txt-16" data-link="home">Home.</a>
+            <a class='header__link txt txt-16 active' data-link='about' href='about.html'>About us.</a>
+            <a class='header__link txt txt-16' data-link='tech' href='tech.html'>Services.</a>
+            <a class='header__link txt txt-16' data-link='job' href='careers.html'>Careers.</a>
+            <a class='header__link txt txt-16' data-link='news' href='news.html'>News & Media.</a>
+            <a class='header__link txt txt-16' data-link='event' href='#event'>Contact.</a>
+          </div>
+          <div class="header__links-toggle">
+            <span class="header__links-toggle-icon header__links-toggle-icon-1"></span>
+            <span class="header__links-toggle-icon header__links-toggle-icon-2"></span>
+            <span class="header__links-toggle-icon header__links-toggle-icon-3"></span>
+          </div>
+        </div>
+
+        <div class="header_act">
+          <a href="#" class="btn btn-pri header__btn" data-popup="contact">
+            <div class="txt txt-16 txt-med">Request Crew</div>
+          </a>
+        </div>
+
+        <a href="#" class="header__toggle">
+          <span class="header__toggle-icon header__toggle-icon-1"></span>
+          <span class="header__toggle-icon header__toggle-icon-2"></span>
+          <span class="header__toggle-icon header__toggle-icon-3"></span>
+        </a>
+
+        <nav class="header__nav" data-lenis-prevent>
+          <ul>
+            <li class="header__nav-item"><a href="index.html" data-link="home" class="header__nav-link txt txt-16 txt-med">Home.</a></li>
+            <li class="header__nav-item"><a class='header__nav-link txt txt-16 txt-med' data-link='about' href='about.html'>About.</a></li>
+            <li class="header__nav-item"><a class='header__nav-link txt txt-16 txt-med' data-link='tech' href='tech.html'>Services.</a></li>
+            <li class="header__nav-item"><a class='header__nav-link txt txt-16 txt-med' data-link='job' href='careers.html'>Careers.</a></li>
+            <li class="header__nav-item"><a class='header__nav-link txt txt-16 txt-med' data-link='news' href='news.html'>News & Media.</a></li>
+            <li class="header__nav-item"><a class='header__nav-link txt txt-16 txt-med' data-link='event' href='#event'>Contact.</a></li>
+            <li class="header__nav-item">
+              <a href="#" class="h6 header__nav-cta heading" data-popup="contact">
+                Request Crew
+                <div class="arr-ic-main icon">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M30.4401 3.68089L3.00001 31.121L0.878693 28.9997L28.3188 1.55957L30.4401 3.68089Z" fill="white"></path>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 1.5H30.5V27.5H27.5V4.5H4.5V1.5Z" fill="white"></path>
+                  </svg>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="main" data-barba="container" data-barba-namespace="about" data-namespace="about">
+
+      <!-- Hero Section -->
+      <section class="abt-hero" style="position: relative; overflow: hidden; background: #0c0d0e; padding-top: 13rem; padding-bottom: 7rem;">
+        <canvas id="careers-3d-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0.65;"></canvas>
+        <div class="container grid" style="position: relative; z-index: 2;">
+          <div style="grid-column: 1 / -1;">
+            <div class="about-hero-badge">
+              ABOUT SAIRISH MARITIME SOLUTIONS • SINGAPORE HQ
+            </div>
+            <h1 class="h1 heading" style="color: #ffffff; line-height: 1.05; font-size: clamp(3.8rem, 5.8vw, 8.4rem); max-width: 135rem;">
+              People Are the Pulse of <br>
+              <span style="color: #ff471d;">Global Maritime Operations.</span>
+            </h1>
+            <p class="txt txt-24 txt-med" style="color: rgba(255, 255, 255, 0.75); max-width: 105rem; margin-top: 2.4rem; line-height: 1.5;">
+              Headquartered in Singapore, Sairish Maritime Solutions delivers world-class crew recruitment, certified technical manning, and 24/7 global mobilization for premier international shipowners, technical managers, and commercial fleets.
+            </p>
+            <div style="margin-top: 3.6rem; display: flex; gap: 2rem; flex-wrap: wrap;">
+              <a href="#leadership-team" class="btn btn-pri" style="padding: 1.6rem 3.4rem;">
+                <span class="txt txt-16 txt-bold">Meet Leadership Team</span>
+              </a>
+              <a href="#strategic-pillars" class="btn btn-outline" style="padding: 1.6rem 3.4rem; color: #fff; border-color: rgba(255,255,255,0.4);">
+                <span class="txt txt-16 txt-bold">Why Choose Sairish</span>
+              </a>
+              <a href="#" class="btn btn-outline" data-popup="contact" style="padding: 1.6rem 3.4rem; color: #ff471d; border-color: #ff471d;">
+                <span class="txt txt-16 txt-bold">Request Crew Proposal</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Performance Metrics Stats Bar -->
+      <section class="about-stats-bar">
+        <div class="container grid" style="grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); gap: 3.2rem;">
+          <div class="about-stat-item">
+            <span class="about-stat-val">5,000+</span>
+            <span class="about-stat-lbl">Certified Seafarers in Active Pool</span>
+          </div>
+          <div class="about-stat-item">
+            <span class="about-stat-val">150+</span>
+            <span class="about-stat-lbl">Commercial Vessels Manned</span>
+          </div>
+          <div class="about-stat-item">
+            <span class="about-stat-val">99.4%</span>
+            <span class="about-stat-lbl">On-Time Scheduled Relief Rate</span>
+          </div>
+          <div class="about-stat-item">
+            <span class="about-stat-val">0</span>
+            <span class="about-stat-lbl">Port State Control (PSC) Detentions</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Purpose & Philosophy (About Narrative) -->
+      <section class="section" style="padding: 10rem 0; background: #ffffff;">
+        <div class="container grid" style="align-items: center; gap: 6rem;">
+          
+          <!-- Image Column -->
+          <div style="grid-column: span 6; position: relative;">
+            <div class="img-wrap" style="--aspect: 75%; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 45px rgba(0,0,0,0.08);">
+              <img src="abt-info-1.c54342e9.jpg" alt="Sairish Maritime Operations" class="img-abs img-fill" loading="lazy" width="600" height="450">
+            </div>
+            <div style="position: absolute; bottom: -2.4rem; right: -2.4rem; background: #151618; color: #ffffff; padding: 2.4rem 3rem; border-left: 4px solid #ff471d; box-shadow: 0 15px 35px rgba(0,0,0,0.18);">
+              <span class="txt txt-14 txt-bold" style="color: #ff471d; text-transform: uppercase; letter-spacing: 0.1em; display: block;">Singapore HQ</span>
+              <span class="txt txt-20 txt-bold" style="color: #fff; margin-top: 0.4rem; display: block;">Connecting Global Seas</span>
+            </div>
+          </div>
+
+          <!-- Text Column -->
+          <div style="grid-column: span 6;">
+            <div class="txt txt-16 txt-bold txt-hl" style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.2rem;">
+              OUR PURPOSE & PHILOSOPHY
+            </div>
+            <h2 class="h2 heading" style="font-size: clamp(3rem, 3.8vw, 4.8rem); line-height: 1.15; margin-bottom: 2rem;">
+              Right People • Right Vessel • Right Time.
+            </h2>
+            <p class="txt txt-18" style="color: #444; line-height: 1.6; margin-bottom: 1.8rem;">
+              Sairish Maritime Solutions was established in Singapore with a single unwavering objective: to provide international shipowners and managers with reliable, high-calibre maritime crew who embody the highest standards of safety, professionalism, and MLC 2006 compliance.
+            </p>
+            <p class="txt txt-18" style="color: #444; line-height: 1.6; margin-bottom: 2.8rem;">
+              In an industry where a single unqualified crew member or missed port relief can cause severe operational downtime and Port State Control penalties, Sairish acts as an indispensable strategic partner. We combine deep seafaring heritage with modern digital crew logistics, delivering seamless end-to-end manning across deep-sea and offshore fleets worldwide.
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+              <div style="border-left: 2px solid #ff471d; padding-left: 1.6rem;">
+                <span class="txt txt-18 txt-bold" style="color: #111; display: block;">100% Verified STCW</span>
+                <span class="txt txt-14" style="color: #666; margin-top: 0.4rem; display: block;">Rigorous matrix screening and sea-time audits.</span>
+              </div>
+              <div style="border-left: 2px solid #ff471d; padding-left: 1.6rem;">
+                <span class="txt txt-18 txt-bold" style="color: #111; display: block;">24/7 Global Agility</span>
+                <span class="txt txt-14" style="color: #666; margin-top: 0.4rem; display: block;">Singapore & Mumbai emergency relief desks.</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Interactive Leadership & Crewing Team Section -->
+      <section id="leadership-team" class="section" style="padding: 10rem 0; background: #f6f8fa; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0;">
+        <div class="container">
+          <div style="margin-bottom: 5rem; max-width: 85rem;">
+            <div class="txt txt-16 txt-bold txt-hl" style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">
+              LEADERSHIP & MARITIME EXPERTS
+            </div>
+            <h2 class="h2 heading" style="font-size: clamp(3rem, 4vw, 5.2rem); line-height: 1.1;">
+              Guided by Master Mariners, Chief Engineers & Crewing Innovators
+            </h2>
+            <p class="txt txt-18" style="color: #666; margin-top: 1.2rem; line-height: 1.6;">
+              Our leadership team unites decades of command experience on deep-sea merchant vessels with modern digital human resource management. Hover over any leader to review their background and operational focus.
+            </p>
+          </div>
+
+          <!-- Interactive Master-Detail Team Component -->
+          <div class="team-showcase-wrap">
+            
+            <!-- Left List -->
+            <div class="team-mem-list">
+
+              <div class="team-mem active" data-team-index="0">
+                <div>
+                  <div class="team-mem-info-title">Amelie Binder</div>
+                  <div class="team-mem-info-role">Chief Executive Officer & Co-Founder</div>
+                </div>
+                <span class="team-mem-badge">Executive</span>
+              </div>
+
+              <div class="team-mem" data-team-index="1">
+                <div>
+                  <div class="team-mem-info-title">Alexander Brandt</div>
+                  <div class="team-mem-info-role">Managing Director & Co-Founder</div>
+                </div>
+                <span class="team-mem-badge">Management</span>
+              </div>
+
+              <div class="team-mem" data-team-index="2">
+                <div>
+                  <div class="team-mem-info-title">Capt. Ahmad Al-Mansoor</div>
+                  <div class="team-mem-info-role">VP Fleet Operations & Quality (Master Mariner)</div>
+                </div>
+                <span class="team-mem-badge">Operations</span>
+              </div>
+
+              <div class="team-mem" data-team-index="3">
+                <div>
+                  <div class="team-mem-info-title">Marcus Sterling</div>
+                  <div class="team-mem-info-role">Head of Marine Recruitment & Vetting</div>
+                </div>
+                <span class="team-mem-badge">Recruitment</span>
+              </div>
+
+              <div class="team-mem" data-team-index="4">
+                <div>
+                  <div class="team-mem-info-title">Martin Vance</div>
+                  <div class="team-mem-info-role">Chief Technology Officer (NavisCrew Cloud)</div>
+                </div>
+                <span class="team-mem-badge">Technology</span>
+              </div>
+
+              <div class="team-mem" data-team-index="5">
+                <div>
+                  <div class="team-mem-info-title">Royia Sen</div>
+                  <div class="team-mem-info-role">Head of Compliance & MLC 2006 Audit</div>
+                </div>
+                <span class="team-mem-badge">Compliance</span>
+              </div>
+
+              <div class="team-mem" data-team-index="6">
+                <div>
+                  <div class="team-mem-info-title">Tim De Vries</div>
+                  <div class="team-mem-info-role">VP Commercial Partnerships & Manning Matrices</div>
+                </div>
+                <span class="team-mem-badge">Commercial</span>
+              </div>
+
+              <div class="team-mem" data-team-index="7">
+                <div>
+                  <div class="team-mem-info-title">Timon Becker</div>
+                  <div class="team-mem-info-role">Director of Maritime Training & Competency</div>
+                </div>
+                <span class="team-mem-badge">Training</span>
+              </div>
+
+              <div class="team-mem" data-team-index="8">
+                <div>
+                  <div class="team-mem-info-title">Matt Johansson</div>
+                  <div class="team-mem-info-role">Head of Crew Logistics & Rotation Planning</div>
+                </div>
+                <span class="team-mem-badge">Logistics</span>
+              </div>
+
+            </div>
+
+            <!-- Right Visual Stage -->
+            <div class="team-preview-stage">
+              
+              <!-- Item 0: Amelie -->
+              <div class="abt-team__main-img-item active" style="background-image: url('team-mem-amelie-1.fa200a86.png');">
+                <div class="team-preview-overlay">
+                  <div class="team-preview-name">Amelie Binder</div>
+                  <div class="team-preview-role">Chief Executive Officer & Co-Founder</div>
+                  <p class="team-preview-bio">
+                    Directing Sairish Maritime's international growth, strategic shipowner partnerships, and modern sustainable maritime crewing initiatives from Singapore.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 1: Alex -->
+              <div class="abt-team__main-img-item" style="background-image: url('team-mem-alex-1.80231ddb.jpg');">
+                <div class="team-preview-overlay">
+                  <div class="team-preview-name">Alexander Brandt</div>
+                  <div class="team-preview-role">Managing Director & Co-Founder</div>
+                  <p class="team-preview-bio">
+                    Leading commercial vessel manning solutions, corporate strategy, and cross-border crewing operations across European and Asian shipping lanes.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2: Ahmad -->
+              <div class="abt-team__main-img-item" style="background-image: url('team-mem-ahmad-1.5e1a1114.png');">
+                <div class="team-preview-overlay">
+                  <div class="team-preview-name">Capt. Ahmad Al-Mansoor</div>
+                  <div class="team-preview-role">VP Fleet Operations & Quality</div>
+                  <p class="team-preview-bio">
+                    STCW Class 1 Master Mariner with over 18 years in deep-sea command. Oversees nautical safety protocols, bridge team management, and PSC audit readiness.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 3: Marcus -->
+              <div class="abt-team__main-img-item" style="background-image: url('team-mem-marcus-1.a5ee25d9.png');">
+                <div class="team-preview-overlay">
+                  <div class="team-preview-name">Marcus Sterling</div>
+                  <div class="team-preview-role">Head of Marine Recruitment & Vetting</div>
+                  <p class="team-preview-bio">
+                    Directs candidate screening, STCW certificate authentication, technical interview panels, and seafarer pool deployment for Tanker and Bulk fleets.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 4: Martin -->
+              <div class="abt-team__main-img-item" style="background-image: url('team-mem-martin-1.48a23de6.png');">
+                <div class="team-preview-overlay">
+                  <div class="team-preview-name">Martin Vance</div>
+                  <div class="team-preview-role">Chief Technology Officer</div>
+                  <p class="team-preview-bio">
+                    Architect of the NavisCrew digital crewing ecosystem, automating flag-state endorsement tracking, live rotation dashboards, and seafarer mobile portals.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 5: Royia -->
+              <div class="abt-team__main-img-item" style="background-image: url('team-mem-royia-1.bb96c8d3.jpg');">
+                <div class="team-preview-overlay">
+                  <div class="team-preview-name">Royia Sen</div>
+                  <div class="team-preview-role">Head of Compliance & MLC 2006 Audit</div>
+                  <p class="team-preview-bio">
+                    Lead Maritime Quality Auditor overseeing strict MLC 2006, ISM, ISPS, and Flag Administration compliance for all seafarer employment agreements (SEAs).
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 6: Tim -->
+              <div class="abt-team__main-img-item" style="background-image: url('team-mem-tim-1.a3ce2d7d.png');">
+                <div class="team-preview-overlay">
+                  <div class="team-preview-name">Tim De Vries</div>
+                  <div class="team-preview-role">VP Commercial Partnerships</div>
+                  <p class="team-preview-bio">
+                    Specializes in custom fleet crewing contracts, BIMCO crew agreements, and tailored officer matrices for multinational shipowners and charterers.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 7: Timon -->
+              <div class="abt-team__main-img-item" style="background-image: url('team-mem-timon-1.91728ef0.png');">
+                <div class="team-preview-overlay">
+                  <div class="team-preview-name">Timon Becker</div>
+                  <div class="team-preview-role">Director of Maritime Training</div>
+                  <p class="team-preview-bio">
+                    Former Chief Engineer leading simulator-based engine room resource management, high-voltage certification, and green fuel (LNG/methanol) readiness courses.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 8: Matt -->
+              <div class="abt-team__main-img-item" style="background-image: url('team-mem-matt-1.70cb2838.png');">
+                <div class="team-preview-overlay">
+                  <div class="team-preview-name">Matt Johansson</div>
+                  <div class="team-preview-role">Head of Crew Logistics & Rotation</div>
+                  <p class="team-preview-bio">
+                    Manages 24/7 global crew change operations, OKTB visas, port agent coordination, and flight logistics across 45 international hubs.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Strategic Value Pillars (3D Tilt Cards) -->
+      <section id="strategic-pillars" class="section" style="padding: 10rem 0; background: #ffffff;">
+        <div class="container">
+          <div style="margin-bottom: 5rem;">
+            <div class="txt txt-16 txt-bold txt-hl" style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">
+              THE SAIRISH ADVANTAGE
+            </div>
+            <h2 class="h2 heading" style="font-size: clamp(3rem, 4vw, 5.2rem); line-height: 1.1;">
+              Why Leading Shipowners Rely on Our Crewing
+            </h2>
+            <p class="txt txt-18" style="color: #666; margin-top: 1rem; max-width: 85rem;">
+              We eliminate crewing friction, reduce vessel downtime, and guarantee uncompromising adherence to international maritime safety standards.
+            </p>
+          </div>
+
+          <!-- 6 Bespoke 3D Tilt Cards Grid -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr)); gap: 3rem;">
+
+            <!-- Card 1 -->
+            <div class="value-card-3d career-3d-card">
+              <div>
+                <div class="value-card-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                </div>
+                <h3 class="h4 heading" style="font-size: 2.2rem; margin-bottom: 1.2rem; color: #111;">100% STCW & MLC Compliance</h3>
+                <p class="txt txt-16" style="color: #555; line-height: 1.6;">
+                  Every seafarer undergoes strict 5-stage background vetting, certificate authentication with issuing flag authorities, sea-time validation, and medical fitness clearance before deployment.
+                </p>
+              </div>
+              <div style="margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid #edf2f7;">
+                <span class="txt txt-14 txt-bold" style="color: #ff471d;">Zero PSC Detentions Record</span>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="value-card-3d career-3d-card">
+              <div>
+                <div class="value-card-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <h3 class="h4 heading" style="font-size: 2.2rem; margin-bottom: 1.2rem; color: #111;">24/7 Rapid Emergency Mobilization</h3>
+                <p class="txt txt-16" style="color: #555; line-height: 1.6;">
+                  Our round-the-clock operations desks in Singapore and Mumbai handle urgent port changes, medical repatriations, and emergency officer replacements within 24 to 48 hours worldwide.
+                </p>
+              </div>
+              <div style="margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid #edf2f7;">
+                <span class="txt txt-14 txt-bold" style="color: #ff471d;">Global Emergency Desks</span>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="value-card-3d career-3d-card">
+              <div>
+                <div class="value-card-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <h3 class="h4 heading" style="font-size: 2.2rem; margin-bottom: 1.2rem; color: #111;">NavisCrew Digital Portal</h3>
+                <p class="txt txt-16" style="color: #555; line-height: 1.6;">
+                  Shipowners gain real-time visibility into onboard crew matrices, flight itineraries, upcoming contract expirations, training logs, and digital document vaults via our cloud platform.
+                </p>
+              </div>
+              <div style="margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid #edf2f7;">
+                <span class="txt txt-14 txt-bold" style="color: #ff471d;">Real-Time Fleet Oversight</span>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="value-card-3d career-3d-card">
+              <div>
+                <div class="value-card-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <h3 class="h4 heading" style="font-size: 2.2rem; margin-bottom: 1.2rem; color: #111;">92% Crew Re-Joining Rate</h3>
+                <p class="txt txt-16" style="color: #555; line-height: 1.6;">
+                  We maintain exceptional retention through on-time sign-offs, transparent USD wage payments, comprehensive family medical coverage, and structured officer career development paths.
+                </p>
+              </div>
+              <div style="margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid #edf2f7;">
+                <span class="txt txt-14 txt-bold" style="color: #ff471d;">High Seafarer Loyalty</span>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="value-card-3d career-3d-card">
+              <div>
+                <div class="value-card-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+                <h3 class="h4 heading" style="font-size: 2.2rem; margin-bottom: 1.2rem; color: #111;">Vessel-Specific Matrix Screening</h3>
+                <p class="txt txt-16" style="color: #555; line-height: 1.6;">
+                  Customized qualification screening tailored for Oil/Chemical Tankers (SIRE 2.0 readiness), Gas Carriers (SIGTTO standards), Bulk Carriers, Container Liners, and Offshore DP vessels.
+                </p>
+              </div>
+              <div style="margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid #edf2f7;">
+                <span class="txt txt-14 txt-bold" style="color: #ff471d;">Tailored Competency Profiles</span>
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="value-card-3d career-3d-card">
+              <div>
+                <div class="value-card-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                </div>
+                <h3 class="h4 heading" style="font-size: 2.2rem; margin-bottom: 1.2rem; color: #111;">End-to-End Administrative Care</h3>
+                <p class="txt txt-16" style="color: #555; line-height: 1.6;">
+                  We handle the full administrative lifecycle: flag-state endorsements (Panama, Liberia, Marshall Islands, MPA), visa processing (Schengen, US C1/D), ticketing, and port agent coordination.
+                </p>
+              </div>
+              <div style="margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid #edf2f7;">
+                <span class="txt txt-14 txt-bold" style="color: #ff471d;">Complete Administrative Freedom</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Global Footprint & Manning Hubs -->
+      <section class="section" style="padding: 10rem 0; background: #0c0d0e; color: #ffffff;">
+        <div class="container">
+          <div style="margin-bottom: 5rem; max-width: 85rem;">
+            <div class="txt txt-16 txt-bold" style="color: #ff471d; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">
+              GLOBAL OPERATIONS NETWORK
+            </div>
+            <h2 class="h2 heading" style="color: #fff; font-size: clamp(3rem, 4vw, 5.2rem); line-height: 1.1;">
+              Positioned Across Critical Maritime Trade Routes
+            </h2>
+            <p class="txt txt-18" style="color: rgba(255, 255, 255, 0.7); margin-top: 1rem; line-height: 1.6;">
+              With strategic operating hubs located at key crew transit gateways in Asia, Europe, and the Middle East, we orchestrate seamless seafarer mobilization 24 hours a day, 365 days a year.
+            </p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr)); gap: 2.8rem;">
+            
+            <!-- Hub 1: Singapore -->
+            <div class="hub-card">
+              <span class="hub-badge">Global Headquarters</span>
+              <h3 class="hub-title">Singapore</h3>
+              <p class="hub-desc">
+                Executive commercial desk, strategic client accounts, Southeast Asian port logistics, and international maritime regulatory liaisons.
+              </p>
+              <div style="margin-top: 2rem; font-size: 1.3rem; color: rgba(255,255,255,0.45);">
+                Block 16, Simei Street 1, #11-06, Singapore 529942
+              </div>
+            </div>
+
+            <!-- Hub 2: Mumbai & Goa -->
+            <div class="hub-card">
+              <span class="hub-badge">Primary Manning Hub</span>
+              <h3 class="hub-title">Mumbai & Goa, India</h3>
+              <p class="hub-desc">
+                Dedicated officer sourcing, simulator-based vetting, pre-joining briefings, and continuous maritime technical training center.
+              </p>
+              <div style="margin-top: 2rem; font-size: 1.3rem; color: rgba(255,255,255,0.45);">
+                24/7 Seafarer Mobilization Desk
+              </div>
+            </div>
+
+            <!-- Hub 3: Manila -->
+            <div class="hub-card">
+              <span class="hub-badge">Technical Manning Desk</span>
+              <h3 class="hub-title">Manila, Philippines</h3>
+              <p class="hub-desc">
+                Specialized deck and engine ratings recruitment, electro-technical officers (ETO), offshore personnel, and medical clearing.
+              </p>
+              <div style="margin-top: 2rem; font-size: 1.3rem; color: rgba(255,255,255,0.45);">
+                POEA & MLC 2006 Certified Operations
+              </div>
+            </div>
+
+            <!-- Hub 4: Rotterdam -->
+            <div class="hub-card">
+              <span class="hub-badge">European Port Liaison</span>
+              <h3 class="hub-title">Rotterdam, Netherlands</h3>
+              <p class="hub-desc">
+                North Sea and ARA corridor crew changes, rapid Schengen transit handling, and European shipowner technical support.
+              </p>
+              <div style="margin-top: 2rem; font-size: 1.3rem; color: rgba(255,255,255,0.45);">
+                Northern European Logistics Hub
+              </div>
+            </div>
+
+            <!-- Hub 5: Dubai -->
+            <div class="hub-card">
+              <span class="hub-badge">Middle East & Tanker Hub</span>
+              <h3 class="hub-title">Dubai, UAE</h3>
+              <p class="hub-desc">
+                Arabian Gulf and Red Sea transit crewing services, specialized tanker officer mobilization, and offshore support vessel manning.
+              </p>
+              <div style="margin-top: 2rem; font-size: 1.3rem; color: rgba(255,255,255,0.45);">
+                Gulf Region Support Centre
+              </div>
+            </div>
+
+            <!-- Hub 6: Lisbon -->
+            <div class="hub-card">
+              <span class="hub-badge">Atlantic Hub</span>
+              <h3 class="hub-title">Lisbon, Portugal</h3>
+              <p class="hub-desc">
+                Atlantic shipping line crewing support, Southern European port agent liaison, and West African trade mobilization desk.
+              </p>
+              <div style="margin-top: 2rem; font-size: 1.3rem; color: rgba(255,255,255,0.45);">
+                Southern European Operations Office
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Corporate Milestones & Evolution (Restructured Timeline) -->
+      <section class="section" style="padding: 10rem 0; background: #ffffff;">
+        <div class="container">
+          <div style="margin-bottom: 5rem; max-width: 85rem;">
+            <div class="txt txt-16 txt-bold txt-hl" style="text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">
+              OUR JOURNEY & MILESTONES
+            </div>
+            <h2 class="h2 heading" style="font-size: clamp(3rem, 4vw, 5.2rem); line-height: 1.1;">
+              Key Turning Points & Achievements
+            </h2>
+            <p class="txt txt-18" style="color: #666; margin-top: 1rem; line-height: 1.6;">
+              From our founding in Singapore to our expanding presence across major maritime corridors, our journey is defined by innovation, trust, and relentless service excellence.
+            </p>
+          </div>
+
+          <div class="milestone-grid">
+            
+            <!-- Milestone 1 -->
+            <div class="milestone-card career-3d-card">
+              <span class="milestone-year">2022</span>
+              <span class="milestone-tag">Inception & Singapore HQ</span>
+              <p class="milestone-desc">
+                Sairish Maritime Solutions is founded in Singapore by seasoned maritime executives and technologists, dedicated to creating a transparent, 24/7 responsive crewing agency for the global commercial fleet.
+              </p>
+            </div>
+
+            <!-- Milestone 2 -->
+            <div class="milestone-card career-3d-card">
+              <span class="milestone-year">2023</span>
+              <span class="milestone-tag">MLC 2006 & ISO 9001 Certification</span>
+              <p class="milestone-desc">
+                Achieved full international SRPS (Seafarer Recruitment & Placement Service) accreditation from top-tier classification societies and established our primary deep-sea officer manning hub in Mumbai.
+              </p>
+            </div>
+
+            <!-- Milestone 3 -->
+            <div class="milestone-card career-3d-card">
+              <span class="milestone-year">2024</span>
+              <span class="milestone-tag">Launch of NavisCrew Platform</span>
+              <p class="milestone-desc">
+                Deployed our proprietary cloud-based crewing ecosystem, providing ship managers with live vessel crew matrices, digital credential verification, and automated flag-state endorsement tracking.
+              </p>
+            </div>
+
+            <!-- Milestone 4 -->
+            <div class="milestone-card career-3d-card">
+              <span class="milestone-year">2025</span>
+              <span class="milestone-tag">Global Fleet Scaling (150+ Vessels)</span>
+              <p class="milestone-desc">
+                Expanded operations into Rotterdam and Dubai, surpassing 5,000 certified seafarers deployed across 150+ international commercial vessels while maintaining an unblemished zero PSC detention record.
+              </p>
+            </div>
+
+            <!-- Milestone 5 -->
+            <div class="milestone-card career-3d-card">
+              <span class="milestone-year">2026+</span>
+              <span class="milestone-tag">Decarbonized Maritime Manning</span>
+              <p class="milestone-desc">
+                Pioneering specialized training pipelines for next-generation dual-fuel vessels (LNG, Methanol, Ammonia) and wind-assisted propulsion systems, equipping seafarers for the future of maritime trade.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications & Flag State Endorsements -->
+      <section class="section" style="padding: 8rem 0; background: #f8fafc; border-top: 1px solid #e2e8f0;">
+        <div class="container">
+          <div style="text-align: center; margin-bottom: 4.8rem;">
+            <span class="txt txt-16 txt-bold txt-hl" style="text-transform: uppercase; letter-spacing: 2px;">AUDIT & ACCREDITATION</span>
+            <h2 class="h3 heading" style="margin-top: 0.8rem;">Certified by Global Maritime Authorities</h2>
+            <p class="txt txt-16" style="color: #666; margin-top: 0.8rem; max-width: 70rem; margin-left: auto; margin-right: auto;">
+              Our quality management system and crew placement procedures adhere strictly to international maritime regulations and flag administration standards.
+            </p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); gap: 2rem;">
+            
+            <div class="accred-badge">
+              <div class="accred-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div class="accred-name">MLC 2006</div>
+              <div class="accred-sub">SRPS Certified Provider</div>
+            </div>
+
+            <div class="accred-badge">
+              <div class="accred-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+              </div>
+              <div class="accred-name">ISO 9001:2015</div>
+              <div class="accred-sub">Quality Management System</div>
+            </div>
+
+            <div class="accred-badge">
+              <div class="accred-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                  <path d="M7 8h10"></path>
+                  <path d="M7 12h10"></path>
+                  <path d="M7 16h10"></path>
+                </svg>
+              </div>
+              <div class="accred-name">STCW 2010</div>
+              <div class="accred-sub">Manila Amendments Compliant</div>
+            </div>
+
+            <div class="accred-badge">
+              <div class="accred-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
+                  <line x1="4" y1="22" x2="4" y2="15"></line>
+                </svg>
+              </div>
+              <div class="accred-name">MPA Singapore</div>
+              <div class="accred-sub">Recognized Manning Provider</div>
+            </div>
+
+            <div class="accred-badge">
+              <div class="accred-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <div class="accred-name">Flag Approvals</div>
+              <div class="accred-sub">Panama • Liberia • Marshall Is.</div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Life at Sea & Operations Gallery Swiper -->
+      <section class="section" style="padding: 10rem 0; background: #ffffff;">
+        <div class="container">
+          <div style="margin-bottom: 4rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem;">
+            <div>
+              <span class="txt txt-16 txt-bold txt-hl" style="text-transform: uppercase; letter-spacing: 2px;">OPERATIONS IN ACTION</span>
+              <h2 class="h2 heading" style="margin-top: 0.6rem;">Life at Sea & Shore-Side Coordination</h2>
+            </div>
+            <div style="display: flex; gap: 1.2rem;">
+              <a href="#" class="icon icon-32 swiper-nav-btn swiper-nav-btn-left" style="background: #f1f5f9; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              </a>
+              <a href="#" class="icon icon-32 swiper-nav-btn swiper-nav-btn-right" style="background: #111; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="abt-info__swiper">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="abt-info__swiper-item img-wrap swiper-slide" style="border-radius: 4px; overflow: hidden;">
+                  <img src="1-abt-info.3186dc62.jpg" alt="Vessel Operations" class="img-abs img-fill" width="386" height="225">
+                </div>
+                <div class="abt-info__swiper-item img-wrap swiper-slide" style="border-radius: 4px; overflow: hidden;">
+                  <img src="2-abt-info.c4938e0b.jpg" alt="Crew on Bridge" class="img-abs img-fill" width="386" height="225">
+                </div>
+                <div class="abt-info__swiper-item img-wrap swiper-slide" style="border-radius: 4px; overflow: hidden;">
+                  <img src="3-abt-info.674df294.jpg" alt="Engine Room Operations" class="img-abs img-fill" width="386" height="225">
+                </div>
+                <div class="abt-info__swiper-item img-wrap swiper-slide" style="border-radius: 4px; overflow: hidden;">
+                  <img src="4-abt-info.2311225a.jpg" alt="Maritime Training" class="img-abs img-fill" width="386" height="225">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Events & Industry Summits -->
+      <section class="abt-event" data-logo-main="dark" id="event" style="padding: 8rem 0; background: #0c0d0e; color: #fff;">
+        <div class="container grid">
+          <div class="abt-event__head">
+            <div class="abt-event__label txt txt-20 txt-med" style="color: #ff471d;">GLOBAL EVENTS & FORUMS</div>
+            <h3 class="abt-event__title h3 heading" style="color: #fff;">
+              Connect with Sairish Maritime at <span class="txt-hl">Global Maritime Summits</span>
+            </h3>
+            <div class="abt-event__sub txt txt-18" style="color: rgba(255,255,255,0.7);">
+              Meet our leadership delegation at international shipping exhibitions and crew management forums.
+            </div>
+          </div>
+          
+          <div class="abt-event__main" data-swiper="swiper">
+            <div class="abt-event__list" data-swiper="wrapper">
+              
+              <a href="#" class="abt-event__item" data-swiper="slide" data-popup="event">
+                <div class="abt-event__item-date txt txt-24 txt-med">27 Jul, 2026</div>
+                <div class="abt-event__item-location txt txt-16 txt-med">Singapore</div>
+                <div class="abt-event__item-title txt txt-24 txt-med">Singapore Maritime Week (SMW) 2026</div>
+                <div class="abt-event__item-ic">
+                  <div class="arr-wrap arr-wrap-32">
+                    <div class="arr-ic-main icon icon-32">
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M30.4401 3.68089L3.00001 31.121L0.878693 28.9997L28.3188 1.55957L30.4401 3.68089Z" fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 1.5H30.5V27.5H27.5V4.5H4.5V1.5Z" fill="currentColor"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="abt-event__item" data-swiper="slide" data-popup="event">
+                <div class="abt-event__item-date txt txt-24 txt-med">15 Sep, 2026</div>
+                <div class="abt-event__item-location txt txt-16 txt-med">London, UK</div>
+                <div class="abt-event__item-title txt txt-24 txt-med">London International Shipping Week (LISW)</div>
+                <div class="abt-event__item-ic">
+                  <div class="arr-wrap arr-wrap-32">
+                    <div class="arr-ic-main icon icon-32">
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M30.4401 3.68089L3.00001 31.121L0.878693 28.9997L28.3188 1.55957L30.4401 3.68089Z" fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 1.5H30.5V27.5H27.5V4.5H4.5V1.5Z" fill="currentColor"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="abt-event__item" data-swiper="slide" data-popup="event">
+                <div class="abt-event__item-date txt txt-24 txt-med">10 Nov, 2026</div>
+                <div class="abt-event__item-location txt txt-16 txt-med">Dubai, UAE</div>
+                <div class="abt-event__item-title txt txt-24 txt-med">Middle East Tanker & Crew Management Summit</div>
+                <div class="abt-event__item-ic">
+                  <div class="arr-wrap arr-wrap-32">
+                    <div class="arr-ic-main icon icon-32">
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M30.4401 3.68089L3.00001 31.121L0.878693 28.9997L28.3188 1.55957L30.4401 3.68089Z" fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M4.5 1.5H30.5V27.5H27.5V4.5H4.5V1.5Z" fill="currentColor"></path>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dual Call to Action -->
+      <section class="section" style="padding: 10rem 0; background: #ffffff;">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(36rem, 1fr)); gap: 3.2rem;">
+            
+            <!-- Shipowners CTA -->
+            <div class="cta-card cta-card-dark">
+              <div>
+                <span class="txt txt-14 txt-bold" style="color: #ff471d; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 1.2rem;">For Shipowners & Technical Managers</span>
+                <h3 class="h3 heading" style="color: #fff; font-size: 3.2rem; line-height: 1.2; margin-bottom: 1.6rem;">
+                  Require Verified Crew for Your Fleet?
+                </h3>
+                <p class="txt txt-16" style="color: rgba(255, 255, 255, 0.7); line-height: 1.6;">
+                  Receive a prompt, tailored manpower proposal with verified officer matrices, flag-state endorsements, and competitive wage rate cards.
+                </p>
+              </div>
+              <div style="margin-top: 3.6rem;">
+                <a href="#" class="btn btn-pri" data-popup="contact" style="padding: 1.6rem 3.2rem;">
+                  <span class="txt txt-16 txt-bold">Request Manning Proposal</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Seafarers CTA -->
+            <div class="cta-card cta-card-light">
+              <div>
+                <span class="txt txt-14 txt-bold" style="color: #ff471d; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 1.2rem;">For Officers & Ratings</span>
+                <h3 class="h3 heading" style="font-size: 3.2rem; line-height: 1.2; margin-bottom: 1.6rem; color: #111;">
+                  Advance Your Career on Premier Fleets
+                </h3>
+                <p class="txt txt-16" style="color: #555; line-height: 1.6;">
+                  Join thousands of certified deck officers, marine engineers, and ratings enjoying guaranteed on-time sign-offs, USD remuneration, and top-tier vessel placements.
+                </p>
+              </div>
+              <div style="margin-top: 3.6rem;">
+                <a href="careers.html" class="btn btn-outline" style="padding: 1.6rem 3.2rem; border-color: #111; color: #111;">
+                  <span class="txt txt-16 txt-bold">Explore Open Positions</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="container grid">
+          
+          <div class="footer__form-wrap" data-logo-main="mix-mb">
+            <div class="footer__form-icon icon icon-80">
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M65 21.667L40 46.667L15 21.667" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"></path>
+                <path d="M70 10H9.99998C6.31808 10 3.33331 12.9848 3.33331 16.6667V63.3333C3.33331 67.0152 6.31808 70 9.99998 70H70C73.6819 70 76.6666 67.0152 76.6666 63.3333V16.6667C76.6666 12.9848 73.6819 10 70 10Z" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path>
+                <path d="M26.6667 46.667L15 58.3337" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"></path>
+                <path d="M53.3333 46.667L65 58.3337" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"></path>
+              </svg>
+            </div>
+            <div class="footer__form-title h4 heading heading-f-lh">Subscribe to Industry Briefs</div>
+            <div class="footer__form-sub txt txt-16">
+              Stay informed on STCW regulatory changes, crew welfare updates, and global manning market analyses.
+            </div>
+            <form action="#" class="footer__form-main">
+              <div class="input-wrap">
+                <input type="email" name="email" class="input-field txt txt-16" placeholder="Enter your business email" required>
+              </div>
+              <input type="text" class="honey-input" name="blablabla">
+              <button class="btn btn-lg btn-pri input-submit" type="submit">
+                <div class="input-submit-icon">
+                  <div class="icon icon-20">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.59961 9.40169L8.39974 13.2018L16 5.60156" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </div>
+                </div>
+                <span class="input-submit-txt txt txt-18 txt-med">Subscribe</span>
+              </button>
+            </form>
+            <div class="footer__form-caption txt txt-12">We respect seafarer and corporate privacy. No spam.</div>
+          </div>
+
+          <div class="footer__main">
+            <div class="footer__links">
+              <a href="index.html" class="footer__link txt txt-20 txt-med" data-link="home">Home.</a>
+              <a class='footer__link tag-wrap txt txt-20 txt-med' data-link='about' href='about.html'>
+                About. <span class="tag-link">hiring</span>
+              </a>
+              <a class='footer__link txt txt-20 txt-med' data-link='tech' href='tech.html'>Services.</a>
+              <a class='footer__link txt txt-20 txt-med' data-link='job' href='careers.html'>Careers.</a>
+              <a class='footer__link txt txt-20 txt-med' data-link='news' href='news.html'>News & Media.</a>
+              <a href="#" data-popup="contact" class="footer__link txt txt-20 txt-med" data-link="contact">Request Crew.</a>
+            </div>
+
+            <div class="footer__info footer__info-mid grid">
+              <div class="footer__info-addr grid">
+                <div class="footer__info-addr-grp">
+                  <div class="footer__info-addr-label txt txt-16">Global Headquarters</div>
+                  <div class="footer__info-addr-txt txt txt-16">
+                    Sairish Maritime Solutions Pte. Ltd.<br>
+                    Block 16, Simei Street 1, #11-06<br>
+                    Singapore 529942<br>
+                    Singapore
+                  </div>
+                </div>
+              </div>
+              <div class="footer__info-contact">
+                <div class="footer__info-contact-grp">
+                  <div class="footer__info-contact-label txt txt-14">Crewing Desk Email</div>
+                  <a href="mailto:info@sairishcrew.com" class="footer__info-contact-link txt txt-28">info@sairishcrew.com</a>
+                </div>
+                <div class="footer__info-contact-grp">
+                  <div class="footer__info-contact-label txt txt-14">24/7 Operations Hotline</div>
+                  <a href="tel:+6597110695" class="footer__info-contact-link txt txt-28">+65 9711 0695</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer__info grid">
+              <div class="footer__info-copy txt txt-14">
+                © 2025 Sairish Maritime Solutions. All Rights Reserved.
+              </div>
+              <div class="footer__info-legal">
+                <a class='footer__info-legal-link txt txt-14' data-link='legal' href='legal.html'>Legal notice</a>
+                <a class='footer__info-legal-link txt txt-14' data-link='privacy' href='privacy.html'>Privacy policy</a>
+                <a href="https://www.linkedin.com/company/sairishcrew/" class="footer__info-legal-link txt txt-14" target="_blank">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <a href="#" class="footer__marquee" data-popup="contact">
+        <div class="footer__marquee-wrap">
+          <div class="footer__marquee-item heading">Are you interested? Let's discuss today!</div>
+          <div class="footer__marquee-item heading">Are you interested? Let's discuss today!</div>
+        </div>
+        <div class="footer__cursor">
+          <div class="arr-hover footer__cursor-main">
+            <div class="footer__cursor-txt txt-20 txt-bold">Say Hi!</div>
+            <div class="arr-wrap arr-wrap-24">
+              <div class="arr-ic-main icon icon-24">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M22.8301 2.76091L2.25005 23.341L0.659058 21.75L21.2392 1.16992L22.8301 2.76091Z" fill="currentColor"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.375 1.125H22.875V20.625H20.625V3.375H3.375V1.125Z" fill="currentColor"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </footer>
+
+  </div>
+
+  <script src="index.a05c254c.js" defer></script>
+  <script src="sairish-effects.js"></script>
+</body>
+</html>
